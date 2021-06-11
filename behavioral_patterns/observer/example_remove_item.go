@@ -16,7 +16,7 @@ func removeItemfromSlice(list []int, num int) []int {
 	return list
 }
 
-func main() {
+func run() {
 
 	list := []int{10, 2, 3}
 
