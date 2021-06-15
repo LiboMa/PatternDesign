@@ -25,12 +25,15 @@ func testObserver() {
 
 	stop := time.NewTimer(20 * time.Second).C
 	tick := time.NewTicker(time.Second).C
+	count := 0
 
 	for {
 		select {
 		case <-stop:
 			return
 		case t := <-tick:
+			count += 1
+			fmt.Println("count :>", count)
 			n.Notify(Event{Data: t.UnixNano()})
 		}
 	}
